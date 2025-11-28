@@ -15,7 +15,6 @@ namespace TrilhaApiDesafio.Controllers
             _context = context;
         }
 
-        // ✅ GET POR ID
         [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
         {
@@ -27,7 +26,6 @@ namespace TrilhaApiDesafio.Controllers
             return Ok(tarefa);
         }
 
-        // ✅ GET TODOS
         [HttpGet("ObterTodos")]
         public IActionResult ObterTodos()
         {
@@ -35,7 +33,6 @@ namespace TrilhaApiDesafio.Controllers
             return Ok(tarefas);
         }
 
-        // ✅ GET POR TITULO
         [HttpGet("ObterPorTitulo")]
         public IActionResult ObterPorTitulo(string titulo)
         {
@@ -46,7 +43,7 @@ namespace TrilhaApiDesafio.Controllers
             return Ok(tarefas);
         }
 
-        // ✅ GET POR DATA
+
         [HttpGet("ObterPorData")]
         public IActionResult ObterPorData(DateTime data)
         {
@@ -54,7 +51,6 @@ namespace TrilhaApiDesafio.Controllers
             return Ok(tarefa);
         }
 
-        // ✅ GET POR STATUS
         [HttpGet("ObterPorStatus")]
         public IActionResult ObterPorStatus(EnumStatusTarefa status)
         {
@@ -62,7 +58,6 @@ namespace TrilhaApiDesafio.Controllers
             return Ok(tarefa);
         }
 
-        // ✅ POST
         [HttpPost]
         public IActionResult Criar(Tarefa tarefa)
         {
@@ -75,7 +70,6 @@ namespace TrilhaApiDesafio.Controllers
             return CreatedAtAction(nameof(ObterPorId), new { id = tarefa.Id }, tarefa);
         }
 
-        // ✅ PUT
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Tarefa tarefa)
         {
@@ -98,7 +92,6 @@ namespace TrilhaApiDesafio.Controllers
             return Ok(tarefaBanco);
         }
 
-        // ✅ DELETE
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
